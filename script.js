@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleBtn.classList.remove('btn-secondary');
             toggleBtn.classList.add('active');
 
-            // Enable editing on prices
-            document.querySelectorAll('.editable').forEach(el => {
+            // Enable editing on prices AND protected items (Temporary Unlock)
+            // Original: document.querySelectorAll('.editable').forEach(el => {
+            document.querySelectorAll('.editable, [data-protected="true"]').forEach(el => {
                 el.setAttribute('contenteditable', 'true');
             });
 
@@ -30,13 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleBtn.classList.add('btn-secondary');
 
             // Disable editing
-            document.querySelectorAll('.editable').forEach(el => {
+            // Original: document.querySelectorAll('.editable').forEach(el => {
+            document.querySelectorAll('.editable, [data-protected="true"]').forEach(el => {
                 el.removeAttribute('contenteditable');
             });
         }
     });
 
-    // 2. INTERCEPT CLICKS ON PROTECTED ITEMS
+    // 2. INTERCEPT CLICKS ON PROTECTED ITEMS (DISABLED FOR NOW)
+    /*
     document.addEventListener('click', (e) => {
         if (!isEditing) return;
 
@@ -49,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showModal();
         }
     });
+    */
 
     // 3. MODAL LOGIC
     function showModal() {
