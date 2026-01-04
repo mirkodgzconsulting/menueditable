@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Editor - Restaurante</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="editor-mode">
+
+    <!-- TOOLBAR -->
+    <div class="toolbar no-print">
+        <div class="toolbar-brand">Editor de Menú</div>
+        <div class="toolbar-actions">
+            <button id="modeToggle" class="btn btn-secondary">Modo: Lectura</button>
+            <button id="printBtn" class="btn btn-primary" onclick="window.print()">Descargar PDF</button>
+        </div>
+    </div>
+
+    <!-- PREMIUM MODAL -->
+    <div id="premiumModal" class="modal no-print">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Plan Premium</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="premium-icon">👑</div>
+                <h3>Desbloquea la Edición Total</h3>
+                <p>La edición de <strong>nombres y descripciones</strong> es exclusiva para miembros Premium.</p>
+                <p class="subtext">Personaliza cada detalle de tu menú hoy mismo.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://wa.me/393515235870?text=Hola,%20quisiera%20más%20información%20sobre%20el%20Plan%20Premium%20para%20el%20Editor%20de%20Menú."
+                    target="_blank" class="btn btn-primary full-width"
+                    style="text-decoration: none; display: block;">Obtener Premium</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 1: HEADER IMAGE -->
+    <div class="sheet sheet-1">
+        <div class="full-img-container">
+            <img src="./diseño/header.jpg" alt="Portada" class="bg-img">
+        </div>
+    </div>
+
+    <!-- PAGE 2: THE MENU (4 COLUMNS) -->
+    <div class="sheet sheet-2">
+        <div class="menu-spread">
+
+            <!-- ====== LEFT PAGE (Columns 1 & 2) ====== -->
+            <div class="page-half left-page">
+
+                <!-- COLUMN 1 -->
+                <div class="menu-column col-1">
+
+                    <!-- HEADER: ENTRADAS -->
+                    <div class="section-header-banner">
+                        <h2 data-protected="true">ENTRADAS</h2>
+                    </div>
+
+                    <div class="items-group">
+                        <!-- 1 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">1</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Tequeños de ají de gallina (5 pz)
+                                        <span class="allergen-red">(1.7.3)</span></span>
+                                    <span class="price-tag editable">€10</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">involtini ripieni di pollo in salsa di
+                                    peperoncino giallo peruviano e spezie</div>
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">2</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Yuquitas del Valle (6pz) <span
+                                            class="allergen-red">(1.7.3)</span></span>
+                                    <span class="price-tag editable">€10</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">palline di manioca empanate con quinoa,
+                                    ripiene di formaggio</div>
+                            </div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">3</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Causa crocante acevichada <span
+                                            class="allergen-red">(4.8.14)</span></span>
+                                    <span class="price-tag editable">€13</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">sfera di patate peruviane impanate
+                                    accompagnata da salsa acevichada di pesce (trota)</div>
+                            </div>
+                        </div>
+                        <!-- 4 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">4</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Causas 3 regiones <span
+                                            class="allergen-red">(2.3.10.14)</span></span>
+                                    <span class="price-tag editable">€15</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">degustazione di patate peruviane ripiene di
+                                    pesce, polipo e pollo</div>
+                            </div>
+                        </div>
+                        <!-- 5 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">5</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Papa rellena en salsa huancaina <span
+                                            class="allergen-red">(1.7.3)</span></span>
+                                    <span class="price-tag editable">€10</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">patata ripiena con carne di manzo
+                                    accompagnata da salsa huancaina e insalata criolla</div>
+                            </div>
+                        </div>
+                        <!-- 6 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">6</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Ocopa arequipeña con queso frito
+                                        <span class="allergen-red">(1.7.8)</span></span>
+                                    <span class="price-tag editable">€13</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">salsa di huacatay con latte, arachidi
+                                    formaggio, aglio e servito con patate lesse e formaggio fritto croccante</div>
+                            </div>
+                        </div>
+                        <!-- 7 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">7</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Tamales <span
+                                            class="allergen-red">(3.7)</span></span>
+                                    <span class="price-tag editable">€10</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">Emboltinin di farina di maiz peruviano
+                                    speziato ripieno di pollo uova soda, oliva, cotto al vapore</div>
+                            </div>
+                        </div>
+                        <!-- 8 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">8</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Anticuchos <span
+                                            class="allergen-red">(4.12)</span></span>
+                                    <span class="price-tag editable">€12</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">cuori di manzo alla griglia con spezie
+                                    peruviane, mais e patate con salsa di peperoncino rosso (rocoto)</div>
+                            </div>
+                        </div>
+                        <!-- 9 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">9</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Funghi alla griglia en salsa
+                                        anticuchera andina <span class="allergen-red">(7)</span></span>
+                                    <span class="price-tag editable">€10</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">funghi con chimichurri, bagnati con salsa
+                                    anticuchera (ají panca, pepe, cumino, aceto, prezzemolo, aglio e origano)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN 2 -->
+                <div class="menu-column col-2">
+
+                    <div class="items-group">
+                        <!-- 10 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">10</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Ensalada andina con queso fresco
+                                        <span class="allergen-red">(7)</span></span>
+                                    <span class="price-tag editable">€12</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">insalata di quinoa nera e bianca,
+                                    formaggio, pomodoro, avocado.</div>
+                            </div>
+                        </div>
+                        <!-- 11 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">11</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Choritos a la chalaca <span
+                                            class="allergen-red">(7.9.14)</span></span>
+                                    <span class="price-tag editable">€12</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">cozze marinate con lime, mais peruviano
+                                    coriandolo rocoto (leche tigre)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FONDOS HEADER -->
+                    <div class="section-header-banner gap-top-large">
+                        <h2 data-protected="true">FONDOS</h2>
+                    </div>
+
+                    <div class="items-group">
+                        <!-- F1 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">1</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Rocoto relleno <span
+                                            class="allergen-red">(3.7)</span></span>
+                                    <span class="price-tag editable">€16</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">peperoncino ripieno peruviano di carne,
+                                    speziata con uova, oliva e formaggio accompagnato con un tortino di patate</div>
+                            </div>
+                        </div>
+                        <!-- F2 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">2</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Lomo saltado de la casa <span
+                                            class="allergen-red">(6.)</span></span>
+                                    <span class="price-tag editable">€23</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">Fileto argentino tagliato condito con
+                                    cipolla rosa, pomodoro, salsa di soia accompagnato con patate frite e riso bianco
+                                </div>
+                            </div>
+                        </div>
+                        <!-- F3 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">3</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Ossobuco a la norteña <span
+                                            class="allergen-red">(7.)</span></span>
+                                    <span class="price-tag editable">€23</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">ossobuco macerato e stufato con prodotti
+                                    del nord del perú (cipolla, aglio, pepe, cumino, chicha di jora, zucca loche, aji
+                                    amarillo e coriandolo) accompagnato con pure di pallares.</div>
+                            </div>
+                        </div>
+                        <!-- F4 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">4</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Pepian de choclo con lomo saltado
+                                        <span class="allergen-red">(6.7.)</span></span>
+                                    <span class="price-tag editable">€23</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">lomo argentino affumicato con cipolla e
+                                    pomodoro, accompagnato con pure di mais peruviano e spezie</div>
+                            </div>
+                        </div>
+                        <!-- F5 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">5</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Linguinne en salsa anticuchera con
+                                        lomo flameado <span class="allergen-red">(1.6.)</span></span>
+                                    <span class="price-tag editable">€22</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">salsa anticuchera (aji panca, pepe, cumino,
+                                    aceto, prezzemolo, aglio e origano) con funghi, peperone rosso, accompagnato con
+                                    lomo a cubetti flambè.</div>
+                            </div>
+                        </div>
+                        <!-- F6 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">6</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Fetuccini ala huancaina con lomo
+                                        saltado <span class="allergen-red">(1.6.7)</span></span>
+                                    <span class="price-tag editable">€22</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">salsa huancaina (aji amarillo, aglio e
+                                    latte) con fetuccine accompagnato con lomo saltato con pomodoro e cipolle</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- END LEFT PAGE -->
+
+            <!-- CENTRAL DIVIDER -->
+            <div class="center-divider"></div>
+
+            <!-- ====== RIGHT PAGE (Columns 3 & 4) ====== -->
+            <div class="page-half right-page">
+
+                <!-- COLUMN 3 -->
+                <div class="menu-column col-3">
+                    <div class="items-group">
+                        <!-- F7 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">7</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Arroz con pato pachamama <span
+                                            class="allergen-red">(5.14.)</span></span>
+                                    <span class="price-tag editable">€23</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">riso verde norteño, anatra, piselli, carota
+                                    e uova di codorniz</div>
+                            </div>
+                        </div>
+                        <!-- F8 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">8</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Juanes Amazonico <span
+                                            class="allergen-red">(3.)</span></span>
+                                    <span class="price-tag editable">€18</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">Riso bolito speziato con pollo, uova sodo
+                                    oliva, curcuma servito con platano frito.</div>
+                            </div>
+                        </div>
+                        <!-- F9 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">9</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Tacacho con fileto alla griglia <span
+                                            class="allergen-red"></span></span>
+                                    <span class="price-tag editable">€22</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">platano verde fritato con pezzi di maiale
+                                    afumicato acompagnato di filette argentino</div>
+                            </div>
+                        </div>
+                        <!-- F10 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">10</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Costillar amazzonico con patacones
+                                        <span class="allergen-red">(5.14.)</span></span>
+                                    <span class="price-tag editable">€20</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">costina di maiale bagnata con salsa
+                                    agrodolce (miele di chancaca, frutta e condimento anticuchero) accompagnata con
+                                    patacones e salsa di cocona (ají charapita, cipolla, limone e coriandolo).</div>
+                            </div>
+                        </div>
+                        <!-- F11 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">11</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Chicharron ala pachamama de chancho
+                                        en salsa de rocoto <span class="allergen-red">(7.8.)</span></span>
+                                    <span class="price-tag editable">€18</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">Maiale, arrossto con salsa criolla (
+                                    cipolla rossa) servito con salsa de peperoni peruviano, patate lesse (crema di
+                                    rocoto) pasato per olio</div>
+                            </div>
+                        </div>
+                        <!-- F12 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">12</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Chijaukay <span
+                                            class="allergen-red">(1.3.6.10)</span></span>
+                                    <span class="price-tag editable">€18</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">riso fritto con salsa di soia e salsa di
+                                    ostriche accompagnato con pollo crocante in salsa orientale (salsa di soia, ostriche
+                                    e zenzero)</div>
+                            </div>
+                        </div>
+                        <!-- F13 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">13</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Chaufa de quinoa pollo, chancho y
+                                        pulpo <span class="allergen-red">(3.6.11.)</span></span>
+                                    <span class="price-tag editable">€18</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">mix di quinoa bianca e nera con salsa di
+                                    soia, salsa di ostriche, cipolla cinese, polpo, maiale e pollo.</div>
+                            </div>
+                        </div>
+                        <!-- F14 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">14</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Pulpo parrillero <span
+                                            class="allergen-red">(14.)</span></span>
+                                    <span class="price-tag editable">€22</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">polipo alla griglia bagnato con chimichurri
+                                    accompagnato choclo patate dorate e salsa di rocoto</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="allergen-warning" data-protected="true">
+                        * Prodotti surgelati. <br> Chiedere per Allergeni
+                    </div>
+                </div>
+
+                <!-- COLUMN 4 -->
+                <div class="menu-column col-4">
+
+                    <div class="items-group">
+                        <!-- F15 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">15</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Jalea <span
+                                            class="allergen-red">(2.4.7.3.10.14)</span></span>
+                                    <span class="price-tag editable">€22</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">filetto di pesce con croccanti frutti di
+                                    mare accompagnato con manioca frita salsa tartar e insalata di cipolle rosse</div>
+                            </div>
+                        </div>
+                        <!-- F16 -->
+                        <div class="menu-item">
+                            <div class="number-badge" data-protected="true">16</div>
+                            <div class="item-content">
+                                <div class="item-top">
+                                    <!-- Added asterix manually before 'mariscos' as per image -->
+                                    <span class="item-title" data-protected="true">Arroz a la norteña con <span
+                                            style="color:#c0392b">*</span> mariscos flameados <span
+                                            class="allergen-red">(2.7.14)</span></span>
+                                    <span class="price-tag editable">€22</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">riso speziato con coriandolo e frutti di
+                                    mare flameados con chalaquita di ciopolla rossa marinata con lime e coriandolo</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CEVICHES -->
+                    <div class="section-header-banner gap-top">
+                        <h2 data-protected="true">CEVICHES</h2>
+                    </div>
+
+                    <div class="items-group">
+                        <div class="menu-item">
+                            <div class="item-content no-num">
+                                <div class="item-top">
+                                    <span class="item-title uppercase" data-protected="true">CEVICHE AHUMADO <span
+                                            class="allergen-red">(4.9)</span></span>
+                                    <span class="price-tag editable">€18</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">pesce persico affumicato marinato con lime
+                                    in salsa di peperoncino giallo accompagnato con chelino di piselli e mais peruviano
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-content no-num">
+                                <div class="item-top">
+                                    <span class="item-title uppercase" data-protected="true"><span
+                                            style="color:#c0392b">*</span> CEVICHE VEGETARIANO <span
+                                            class="allergen-red">(9)</span></span>
+                                    <span class="price-tag editable">€16</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">fungui marinato con lime, avocado con mais
+                                    peruviano e patate dolce</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-content no-num">
+                                <div class="item-top">
+                                    <span class="item-title uppercase" data-protected="true"><span
+                                            style="color:#c0392b">*</span> CEVICHE HUANCHAQUERO (clàsico) <span
+                                            class="allergen-red">(2.4.9)</span></span>
+                                    <span class="price-tag editable">€20</span>
+                                </div>
+                                <div class="item-desc" data-protected="true">pesce persico con frutti di mare, marinato
+                                    con lime, coriandolo, aglio, pepe, mais peruviano e patata dolce peruviana.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MAKIS -->
+                    <div class="section-header-banner gap-top-large">
+                        <h2 data-protected="true">MAKIS (10 pz)</h2>
+                    </div>
+
+                    <div class="items-group makis-list-vertical">
+                        <div class="menu-item maki-item">
+                            <div class="item-content no-num">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Acevichado <span
+                                            class="allergen-red">(1.2.4.7.9.4)</span></span>
+                                    <span class="price-tag editable">€12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item maki-item">
+                            <div class="item-content no-num">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Parrillero <span
+                                            class="allergen-red">(1.2)</span></span>
+                                    <span class="price-tag editable">€12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item maki-item">
+                            <div class="item-content no-num">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Tiradito <span
+                                            class="allergen-red">(1.2)</span></span>
+                                    <span class="price-tag editable">€12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item maki-item">
+                            <div class="item-content no-num">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Furai <span
+                                            class="allergen-red">(1.2)</span></span>
+                                    <span class="price-tag editable">€12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item maki-item">
+                            <div class="item-content no-num">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Maki norteño <span
+                                            class="allergen-red">(1.2)</span></span>
+                                    <span class="price-tag editable">€12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item maki-item">
+                            <div class="item-content no-num">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Vegimaki <span
+                                            class="allergen-red">(12)</span></span>
+                                    <span class="price-tag editable">€10</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item maki-item">
+                            <div class="item-content no-num">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Maki anticuchero <span
+                                            class="allergen-red">(1.2)</span></span>
+                                    <span class="price-tag editable">€12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item maki-item">
+                            <div class="item-content no-num">
+                                <div class="item-top">
+                                    <span class="item-title" data-protected="true">Maki tartar <span
+                                            class="allergen-red">(1.2.4)</span></span>
+                                    <span class="price-tag editable">€12</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="coperto-box" data-protected="true">
+                        COPERTO <span style="margin-left:20px">€ <span class="coperto-num">2</span></span>
+                    </div>
+
+                </div>
+
+            </div> <!-- END RIGHT PAGE -->
+        </div>
+    </div>
+
+    <!-- PAGE 3: BACK COVER IMAGE -->
+    <div class="sheet sheet-3">
+        <div class="full-img-container">
+            <img src="./diseño/footer.jpg" alt="Contraportada" class="bg-img">
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+</body>
+
+</html>
